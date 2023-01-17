@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Usuarios Cadastro</title>
-</head>
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"> 
+ --></head>
 <body>
-
         <div> 
           <h2>Cadastro de Usuarios</h2>
               <form action="/autenticar" method="POST">
@@ -16,17 +16,64 @@
                     <label for="id">E-mail :</label>
                       <input name="email" type="email" placeholder="Insira sei E-mail"><br><br>
                       <label for="id">Sexo :</label>
-                      <input name="sexo" type="radio" id="Masculino">
+                      <input name="sexo" type="radio" id="Masculino" value="M">
                       <label for="id">Masculino</label>
-                      <input type="radio" id="Femenino" name="sexo">
-                      <label for="id">Femenino</label>
-                      <input type="radio" id="Otro" name="sexo">
-                      <label for="id">Outro</label><br><br>
+                      <input type="radio" id="Femenino" name="sexo" value="F">
+                      <label for="id">Femenino</label><br><br>
                       <label for="id">País</label>
                       <input name="pais" type="text" id="Usuario" placeholder="Insira seu país de origem"> <br><br><br>
-                      <button type="submit">Enviar</button>
+                      <button type="submit" id="enviar">Enviar</button>
                   </fieldset>
               </form>
+            <br>
+            <h2>Busca de Usuarios</h2>
+            <div>
+              <form action="verprodutos">
+                <fieldset>
+                  <legend>Registro de Usuarios</legend>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <br>
+                  <button type="submit">Buscar</button>
+                </fieldset>
+              </form>
+            </div>  
+
+            <h1>Members</h1>
+            <ul>
+            {% for user in users %}
+              <li>{{ user.resultado|e }}</li>
+            {% endfor %}
+            </ul>
+
+  <!--  {{resultado}} -->
          
 <!--   <form action="/autenticar" method="POST">
     Usuario: <input type="text" name="usuario"><br>

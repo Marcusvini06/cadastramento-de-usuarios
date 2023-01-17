@@ -28,7 +28,7 @@ def index():
 def send():
     comando = '''
     insert into cad_usuarios (nome,email,sexo,nacionalidade)
-    values('vini', 'vini1234.gmail.com', 'M', 'br')'''
+    values('usuario', 'email', 'M , F', 'pais'')'''
     cursor.execute(comando)
     cursor.commit()
     return render_template('index.html')
